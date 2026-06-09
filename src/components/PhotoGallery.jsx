@@ -2,42 +2,42 @@ import { useState } from 'react'
 
 const photos = [
   {
-    src: '/photos/fibercop-cro1.jpg',
+    src: `${import.meta.env.BASE_URL}photos/fibercop-cro1.jpg`,
     caption: 'Armadio FiberCop (a sinistra), colonnina alimentazione FTTC (al centro) e ARL TIM (a destra). Il CRO è il più grande, grigio con coperchio rosso.',
     tag: 'CRO / Armadio',
   },
   {
-    src: '/photos/fibercop-cro4.jpg',
+    src: `${import.meta.env.BASE_URL}photos/fibercop-cro4.jpg`,
     caption: 'Un CRO "solitario" in zona ad alta densità abitativa di Savona. Non sempre viene installato accanto all\'ARL esistente.',
     tag: 'CRO / Armadio',
   },
   {
-    src: '/photos/fibercop-cro6.jpg',
+    src: `${import.meta.env.BASE_URL}photos/fibercop-cro6.jpg`,
     caption: 'Un CRO di dimensione ridotta a Chieri (TO). Il modello più piccolo serve fino a 128 unità immobiliari anziché 384.',
     tag: 'CRO / Armadio',
   },
   {
-    src: '/photos/fibercop-cro5.jpg',
+    src: `${import.meta.env.BASE_URL}photos/fibercop-cro5.jpg`,
     caption: 'Due CRO affiancati a Chiavari (GE). Quando le unità immobiliari superano 384, si installano più armadi ottici.',
     tag: 'CRO / Armadio',
   },
   {
-    src: '/photos/fibercop-cro2.jpg',
+    src: `${import.meta.env.BASE_URL}photos/fibercop-cro2.jpg`,
     caption: 'Interno di un CRO aperto. In alto: 384 connettori per la rete secondaria punto-punto. Al centro: spazio per 14 splitter primari 1:4. In basso: spazio per 24 splitter secondari 1:16.',
     tag: 'Interno CRO',
   },
   {
-    src: '/photos/fibercop-cro3.jpg',
+    src: `${import.meta.env.BASE_URL}photos/fibercop-cro3.jpg`,
     caption: 'Dettaglio degli splitter: in alto lo splitter primario 1:4 (4 connettori) e in basso lo splitter secondario 1:16 (16 connettori). Entrambi completamente passivi.',
     tag: 'Interno CRO',
   },
   {
-    src: '/photos/fibercop-roe1.jpg',
+    src: `${import.meta.env.BASE_URL}photos/fibercop-roe1.jpg`,
     caption: 'PTE FiberCop (Punto di Terminazione d\'Edificio) montato su un palo della rete TIM. Riconoscibile dai loghi TIM e FiberCop. È solo un raccordo, senza splitter.',
     tag: 'PTE / ROE',
   },
   {
-    src: '/photos/fibercop-pozzetto.jpg',
+    src: `${import.meta.env.BASE_URL}photos/fibercop-pozzetto.jpg`,
     caption: 'Chiusino di un pozzetto con il logo FiberCop. Sotto ci passano i cavi in fibra ottica che collegano la centrale ai CRO stradali.',
     tag: 'Infrastruttura',
   },
