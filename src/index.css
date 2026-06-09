@@ -1,0 +1,40 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #08101f;
+  --bg2: #0b1528;
+  --surface: #111e35;
+  --surface2: #172540;
+  --border: #1c2e4a;
+  --accent: #00c8ff;
+  --accent2: #0055ff;
+  --accent3: #00e5a0;
+  --red: #ff4455;
+  --orange: #ff8800;
+  --text: #e4ecf8;
+  --muted: #6b80a0;
+  --glow: rgba(0,200,255,0.12);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: rgba(0,200,255,0.25); }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+img { max-width: 100%; display: block; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent2); }
