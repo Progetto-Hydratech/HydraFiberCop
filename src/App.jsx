@@ -11,7 +11,7 @@ const isEmbedded = !!window.__HYDRAFIBER_MOUNT__
 export default function App() {
   return (
     <>
-      {!isEmbedded && <Navbar />
+      {!isEmbedded && <Navbar />}
       <Hero />
       <div className="divider" />
       <ComparisonSection />
