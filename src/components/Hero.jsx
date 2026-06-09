@@ -19,19 +19,15 @@ export default function Hero() {
       resize()
       for (let i = 0; i < 60; i++) {
         particles.push({
-          x: Math.random() * w,
-          y: Math.random() * h,
-          vx: (Math.random() - .5) * .4,
-          vy: (Math.random() - .5) * .4,
-          r: Math.random() * 1.5 + .5,
-          alpha: Math.random() * .5 + .2,
+          x: Math.random() * w, y: Math.random() * h,
+          vx: (Math.random() - .5) * .4, vy: (Math.random() - .5) * .4,
+          r: Math.random() * 1.5 + .5, alpha: Math.random() * .5 + .2,
         })
       }
     }
 
     function draw() {
       ctx.clearRect(0, 0, w, h)
-      // draw connections
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x
@@ -47,7 +43,6 @@ export default function Hero() {
           }
         }
       }
-      // draw dots
       particles.forEach(p => {
         p.x += p.vx; p.y += p.vy
         if (p.x < 0 || p.x > w) p.vx *= -1
@@ -60,8 +55,7 @@ export default function Hero() {
       raf = requestAnimationFrame(draw)
     }
 
-    init()
-    draw()
+    init(); draw()
     window.addEventListener('resize', resize)
     return () => { cancelAnimationFrame(raf); window.removeEventListener('resize', resize) }
   }, [])
@@ -75,46 +69,44 @@ export default function Hero() {
     }}>
       <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', opacity: .7 }} />
 
-      <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', padding: '80px 24px 40px', maxWidth: 780 }}>
-        {/* badge */}
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 32,
+      <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', padding: '80px 24px 40px', maxWidth: 820 }}>
+        <div style={{
+          display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 32,
           padding: '6px 16px', borderRadius: 50, border: '1px solid rgba(245,180,43,.3)',
           background: 'rgba(245,180,43,.06)', fontSize: '.8rem', fontWeight: 600, color: 'var(--accent3)',
         }}>
           <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--accent3)', display: 'inline-block', boxShadow: '0 0 8px var(--accent3)' }} />
-          Infrastruttura FTTH GPON — Italia
+          FiberCop · Open Fiber · Fastweb — Italia
         </div>
 
         <h1 style={{
-          fontSize: 'clamp(3rem, 8vw, 6.5rem)', fontWeight: 900,
-          letterSpacing: '-3px', lineHeight: 1,
-          marginBottom: 28,
+          fontSize: 'clamp(2.8rem, 8vw, 6rem)', fontWeight: 900,
+          letterSpacing: '-3px', lineHeight: 1.05, marginBottom: 28,
           background: 'linear-gradient(135deg, #ffffff 40%, #f5b42b 100%)',
           WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
         }}>
-          Rete<br />FiberCop
+          Reti FTTH<br />in Italia
         </h1>
 
-        <p style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', color: 'var(--muted)', maxWidth: 560, margin: '0 auto 48px', lineHeight: 1.7 }}>
-          Come è strutturata la rete in fibra ottica che porta 1 Gbps
-          nelle case di <strong style={{ color: 'var(--text)' }}>2578 comuni italiani</strong> —
-          dai cavi in centrale fino al tuo appartamento.
+        <p style={{ fontSize: 'clamp(.95rem, 2vw, 1.2rem)', color: 'var(--muted)', maxWidth: 580, margin: '0 auto 48px', lineHeight: 1.7 }}>
+          Confronta le tre infrastrutture in fibra ottica che portano
+          il <strong style={{ color: 'var(--text)' }}>Gigabit</strong> nelle case italiane:
+          architettura, tecnologia, copertura e differenze pratiche.
         </p>
 
         <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <a href="#architettura" style={{
+          <a href="#confronto" style={{
             padding: '14px 32px', borderRadius: 4,
-            background: '#f5b42b',
-            color: '#000000', fontWeight: 700, fontSize: '1rem',
+            background: '#f5b42b', color: '#000', fontWeight: 700, fontSize: '1rem',
             boxShadow: '0 0 30px rgba(245,180,43,.3)', textDecoration: 'none',
             transition: 'transform .2s, background .2s, box-shadow .2s',
           }}
           onMouseEnter={e => { e.currentTarget.style.transform='translateY(-2px)'; e.currentTarget.style.background='#bd8c23'; e.currentTarget.style.boxShadow='0 0 50px rgba(245,180,43,.5)'; }}
           onMouseLeave={e => { e.currentTarget.style.transform=''; e.currentTarget.style.background='#f5b42b'; e.currentTarget.style.boxShadow='0 0 30px rgba(245,180,43,.3)'; }}
           >
-            Esplora l'architettura →
+            Confronta le reti →
           </a>
-          <a href="#chi-e" style={{
+          <a href="#operatori" style={{
             padding: '14px 32px', borderRadius: 4,
             background: 'transparent', border: '2px solid #f5b42b',
             color: '#f5b42b', fontWeight: 600, fontSize: '1rem', textDecoration: 'none',
@@ -123,19 +115,18 @@ export default function Hero() {
           onMouseEnter={e => { e.currentTarget.style.background='#f5b42b'; e.currentTarget.style.color='#000'; }}
           onMouseLeave={e => { e.currentTarget.style.background='transparent'; e.currentTarget.style.color='#f5b42b'; }}
           >
-            Chi è FiberCop
+            Dettagli operatore
           </a>
         </div>
 
-        {/* stats bar */}
         <div style={{ marginTop: 72, display: 'flex', gap: 0, justifyContent: 'center', flexWrap: 'wrap',
           background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 20, overflow: 'hidden',
         }}>
           {[
-            { n: '2.578', l: 'comuni coperti' },
-            { n: '13,6M', l: 'unità immobiliari' },
-            { n: '1 Gbps', l: 'velocità download' },
-            { n: '1:64', l: 'splitting GPON' },
+            { n: '3', l: 'reti FTTH principali' },
+            { n: '1 Gbps', l: 'velocità standard' },
+            { n: '~20M', l: 'UIT raggiungibili' },
+            { n: 'GPON', l: 'tecnologia comune' },
           ].map((s, i) => (
             <div key={i} style={{
               padding: '24px 32px', textAlign: 'center', flex: '1 1 140px',
@@ -148,7 +139,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* scroll indicator */}
       <div style={{ position: 'absolute', bottom: 32, left: '50%', transform: 'translateX(-50%)', opacity: .4 }}>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path d="M12 5v14M5 12l7 7 7-7" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

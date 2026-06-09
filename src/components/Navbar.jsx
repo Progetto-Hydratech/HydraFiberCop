@@ -1,12 +1,8 @@
 import { useState, useEffect } from 'react'
 
 const links = [
-  { href: '#chi-e', label: 'Chi è' },
-  { href: '#scorporo', label: 'Scorporo' },
-  { href: '#architettura', label: 'Architettura' },
-  { href: '#gpon', label: 'GPON' },
-  { href: '#copertura', label: 'Copertura' },
   { href: '#confronto', label: 'Confronto' },
+  { href: '#operatori', label: 'Operatori' },
   { href: '#foto', label: 'Foto' },
 ]
 
@@ -29,22 +25,18 @@ export default function Navbar() {
       borderBottom: scrolled ? '1px solid var(--border)' : '1px solid transparent',
     }}>
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', height: 64, gap: 32 }}>
-        {/* Logo */}
         <a href="#" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
-          <span style={{
-            display: 'flex', gap: 3, alignItems: 'center',
-          }}>
-            {['#0085FF','#f5b42b','#bd8c23'].map((c,i) => (
+          <span style={{ display: 'flex', gap: 3, alignItems: 'center' }}>
+            {['#0085FF', '#f5b42b', '#bd8c23'].map((c, i) => (
               <span key={i} style={{ width: 7, height: 7, borderRadius: 2, background: c, display: 'block' }} />
             ))}
           </span>
           <span style={{ fontWeight: 800, fontSize: '.95rem', letterSpacing: '-.3px', color: 'var(--text)' }}>
-            FiberCop<span style={{ color: 'var(--accent)' }}>Wiki</span>
+            Hydra<span style={{ color: 'var(--accent3)' }}>Fiber</span>
           </span>
         </a>
 
-        {/* Desktop links */}
-        <div style={{ display: 'flex', gap: 4, marginLeft: 'auto', flexWrap: 'wrap' }} className="nav-links">
+        <div style={{ display: 'flex', gap: 4, marginLeft: 'auto', flexWrap: 'wrap' }}>
           {links.map(l => (
             <a key={l.href} href={l.href} style={{
               padding: '6px 14px', borderRadius: 8,
