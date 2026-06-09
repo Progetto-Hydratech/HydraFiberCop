@@ -40,7 +40,7 @@ const nodes = [
     label: 'Edificio',
     sublabel: 'PTE / ROE',
     icon: '🏢',
-    color: '#00e5a0',
+    color: '#f5b42b',
     title: 'PTE — Punto di Terminazione d\'Edificio',
     desc: 'Il PTE (Punto di Terminazione di Edificio), anche chiamato ROE (Ripartitore Ottico di Edificio), è la scatola installata in cantina o sulla facciata del palazzo. Nella rete FiberCop è solo un raccordo — non contiene splitter.',
     details: [

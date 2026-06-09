@@ -33,7 +33,7 @@ export default function Navbar() {
           <span style={{
             display: 'flex', gap: 3, alignItems: 'center',
           }}>
-            {['#0055ff','#00c8ff','#00e5a0'].map((c,i) => (
+            {['#0085FF','#f5b42b','#bd8c23'].map((c,i) => (
               <span key={i} style={{ width: 7, height: 7, borderRadius: 2, background: c, display: 'block' }} />
             ))}
           </span>

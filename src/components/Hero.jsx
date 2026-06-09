@@ -39,7 +39,7 @@ export default function Hero() {
           const d = Math.sqrt(dx*dx + dy*dy)
           if (d < 120) {
             ctx.beginPath()
-            ctx.strokeStyle = `rgba(0,200,255,${.12 * (1 - d/120)})`
+            ctx.strokeStyle = `rgba(0,133,255,${.12 * (1 - d/120)})`
             ctx.lineWidth = .8
             ctx.moveTo(particles[i].x, particles[i].y)
             ctx.lineTo(particles[j].x, particles[j].y)
@@ -54,7 +54,7 @@ export default function Hero() {
         if (p.y < 0 || p.y > h) p.vy *= -1
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(0,200,255,${p.alpha})`
+        ctx.fillStyle = `rgba(0,133,255,${p.alpha})`
         ctx.fill()
       })
       raf = requestAnimationFrame(draw)
@@ -71,15 +71,15 @@ export default function Hero() {
       position: 'relative', minHeight: '100vh',
       display: 'flex', alignItems: 'center', justifyContent: 'center',
       overflow: 'hidden',
-      background: 'radial-gradient(ellipse at 50% 50%, #06182e 0%, var(--bg) 65%)',
+      background: 'radial-gradient(ellipse at 50% 50%, #0a1f3d 0%, var(--bg) 65%)',
     }}>
       <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', opacity: .7 }} />
 
       <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', padding: '80px 24px 40px', maxWidth: 780 }}>
         {/* badge */}
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 32,
-          padding: '6px 16px', borderRadius: 50, border: '1px solid rgba(0,200,255,.25)',
-          background: 'rgba(0,200,255,.06)', fontSize: '.8rem', fontWeight: 600, color: 'var(--accent)',
+          padding: '6px 16px', borderRadius: 50, border: '1px solid rgba(245,180,43,.3)',
+          background: 'rgba(245,180,43,.06)', fontSize: '.8rem', fontWeight: 600, color: 'var(--accent3)',
         }}>
           <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--accent3)', display: 'inline-block', boxShadow: '0 0 8px var(--accent3)' }} />
           Infrastruttura FTTH GPON — Italia
@@ -89,7 +89,7 @@ export default function Hero() {
           fontSize: 'clamp(3rem, 8vw, 6.5rem)', fontWeight: 900,
           letterSpacing: '-3px', lineHeight: 1,
           marginBottom: 28,
-          background: 'linear-gradient(135deg, #ffffff 30%, #00c8ff 100%)',
+          background: 'linear-gradient(135deg, #ffffff 40%, #f5b42b 100%)',
           WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
         }}>
           Rete<br />FiberCop
@@ -103,25 +103,25 @@ export default function Hero() {
 
         <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
           <a href="#architettura" style={{
-            padding: '14px 32px', borderRadius: 12,
-            background: 'linear-gradient(135deg, var(--accent2), var(--accent))',
-            color: '#fff', fontWeight: 700, fontSize: '1rem',
-            boxShadow: '0 0 40px rgba(0,200,255,.25)', textDecoration: 'none',
-            transition: 'transform .2s, box-shadow .2s',
+            padding: '14px 32px', borderRadius: 4,
+            background: '#f5b42b',
+            color: '#000000', fontWeight: 700, fontSize: '1rem',
+            boxShadow: '0 0 30px rgba(245,180,43,.3)', textDecoration: 'none',
+            transition: 'transform .2s, background .2s, box-shadow .2s',
           }}
-          onMouseEnter={e => { e.currentTarget.style.transform='translateY(-2px)'; e.currentTarget.style.boxShadow='0 0 60px rgba(0,200,255,.4)'; }}
-          onMouseLeave={e => { e.currentTarget.style.transform=''; e.currentTarget.style.boxShadow='0 0 40px rgba(0,200,255,.25)'; }}
+          onMouseEnter={e => { e.currentTarget.style.transform='translateY(-2px)'; e.currentTarget.style.background='#bd8c23'; e.currentTarget.style.boxShadow='0 0 50px rgba(245,180,43,.5)'; }}
+          onMouseLeave={e => { e.currentTarget.style.transform=''; e.currentTarget.style.background='#f5b42b'; e.currentTarget.style.boxShadow='0 0 30px rgba(245,180,43,.3)'; }}
           >
             Esplora l'architettura →
           </a>
           <a href="#chi-e" style={{
-            padding: '14px 32px', borderRadius: 12,
-            background: 'var(--surface)', border: '1px solid var(--border)',
-            color: 'var(--text)', fontWeight: 600, fontSize: '1rem', textDecoration: 'none',
-            transition: 'border-color .2s',
+            padding: '14px 32px', borderRadius: 4,
+            background: 'transparent', border: '2px solid #f5b42b',
+            color: '#f5b42b', fontWeight: 600, fontSize: '1rem', textDecoration: 'none',
+            transition: 'background .2s, color .2s',
           }}
-          onMouseEnter={e => e.currentTarget.style.borderColor='var(--accent)'}
-          onMouseLeave={e => e.currentTarget.style.borderColor='var(--border)'}
+          onMouseEnter={e => { e.currentTarget.style.background='#f5b42b'; e.currentTarget.style.color='#000'; }}
+          onMouseLeave={e => { e.currentTarget.style.background='transparent'; e.currentTarget.style.color='#f5b42b'; }}
           >
             Chi è FiberCop
           </a>
@@ -141,7 +141,7 @@ export default function Hero() {
               padding: '24px 32px', textAlign: 'center', flex: '1 1 140px',
               borderRight: i < 3 ? '1px solid var(--border)' : 'none',
             }}>
-              <div style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', fontWeight: 800, color: 'var(--accent)', letterSpacing: '-1px' }}>{s.n}</div>
+              <div style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', fontWeight: 800, color: 'var(--accent3)', letterSpacing: '-1px' }}>{s.n}</div>
               <div style={{ fontSize: '.75rem', color: 'var(--muted)', marginTop: 4, fontWeight: 500 }}>{s.l}</div>
             </div>
           ))}
