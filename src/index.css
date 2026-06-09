@@ -40,3 +40,8 @@ img { max-width: 100%; display: block; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* Quando embeddato in WordPress, nasconde la navbar interna */
+body.hydrafiber-embedded nav[style*="position: fixed"] {
+  display: none !important;
+}
