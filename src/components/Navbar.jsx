@@ -6,6 +6,7 @@ const links = [
   { href: '#architettura', label: 'Architettura' },
   { href: '#gpon', label: 'GPON' },
   { href: '#copertura', label: 'Copertura' },
+  { href: '#confronto', label: 'Confronto' },
   { href: '#foto', label: 'Foto' },
 ]
 

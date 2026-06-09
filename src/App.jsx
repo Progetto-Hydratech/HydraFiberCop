@@ -6,6 +6,7 @@ import Timeline from './components/Timeline'
 import NetworkDiagram from './components/NetworkDiagram'
 import GponSection from './components/GponSection'
 import CoverageSection from './components/CoverageSection'
+import ComparisonSection from './components/ComparisonSection'
 import PhotoGallery from './components/PhotoGallery'
 import Footer from './components/Footer'
 
@@ -24,6 +25,8 @@ export default function App() {
       <GponSection />
       <div className="divider" />
       <CoverageSection />
+      <div className="divider" />
+      <ComparisonSection />
       <div className="divider" />
       <PhotoGallery />
       <Footer />
